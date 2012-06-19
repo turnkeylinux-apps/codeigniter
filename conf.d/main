@@ -55,3 +55,10 @@ sed -i "s|default'\]\['database.*|default']['database'] = '$DB_NAME';|" $CONF
 
 /etc/init.d/mysql stop
 
+# misc tweak and secure configuration files from prying eyes
+CONF=$CI/application/config/config.php
+sed -i "s|encryption_key.*|encryption_key'] = '$(mcookie)';|" $CONF
+
+chown -R www-data:www-data $CI/application/config
+chmod 640 $CI/application/config/*.php
+
