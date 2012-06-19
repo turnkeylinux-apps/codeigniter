@@ -1,0 +1,10 @@
+#!/bin/sh -ex
+
+DB_NAME=codeigniter
+DB_USER=codeigniter
+DB_PASS=$(mcookie)
+
+SRC=/usr/local/src
+WEBROOT=/var/www/codeigniter
+CI=/var/local/codeigniter
+
