@@ -8,3 +8,17 @@ SRC=/usr/local/src
 WEBROOT=/var/www/codeigniter
 CI=/var/local/codeigniter
 
+# unpack and configure
+unzip $SRC/CodeIgniter_*.zip -d $(dirname $WEBROOT)
+mv $(dirname $WEBROOT)/CodeIgniter_* $WEBROOT
+rm $SRC/CodeIgniter_*.zip
+chown -R root:root $WEBROOT
+
+mkdir -p $CI
+mv $WEBROOT/application $CI
+mv $WEBROOT/system $CI
+
+CONF=$WEBROOT/index.php
+sed -i "s|\$system_path = 'system';|\$system_path = '$CI/system';|" $CONF
+sed -i "s|\$application_folder = 'application';|\$application_folder = '$CI/application';|" $CONF
+
