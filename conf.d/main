@@ -22,3 +22,15 @@ CONF=$WEBROOT/index.php
 sed -i "s|\$system_path = 'system';|\$system_path = '$CI/system';|" $CONF
 sed -i "s|\$application_folder = 'application';|\$application_folder = '$CI/application';|" $CONF
 
+# setup tkl-webcp
+CONF=$CI/application/config/routes.php
+sed -i "s|^\$route\['default.*|\$route['default_controller'] = \"tklwebcp\";|" $CONF
+
+mkdir -p $WEBROOT/assets
+mv /var/www/js $WEBROOT/assets
+mv /var/www/css $WEBROOT/assets
+mv /var/www/images $WEBROOT/assets
+
+cp -TdR $SRC/codeigniter.overlay $CI
+rm -rf $SRC/codeigniter.overlay
+
