@@ -1,6 +1,6 @@
 turnkey-codeigniter-12.1 (1) turnkey; urgency=low
 
-  * Latest version of CodeIgniter will be installed at build time.
+  * Latest Debian package version of CodeIgniter.
 
   * Added phpsh (interative shell for PHP) and php5-cli (generically useful).
 
