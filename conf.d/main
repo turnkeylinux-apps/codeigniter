@@ -9,8 +9,8 @@ WEBROOT=/var/www/codeigniter
 CI=/var/local/codeigniter
 
 # unpack and configure
-unzip $SRC/codeigniter.zip -d $(dirname $WEBROOT)
-mv $(dirname $WEBROOT)/CodeIgniter_* $WEBROOT
+mkdir -p $WEBROOT
+unzip $SRC/codeigniter.zip -d $WEBROOT
 rm $SRC/codeigniter.zip
 chown -R root:root $WEBROOT
 
