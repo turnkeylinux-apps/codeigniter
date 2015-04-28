@@ -68,7 +68,7 @@
             </div>
             <div id="about">
                 <div class="fragment-content">
-                    <h2>The page your looking at is dynamically generated</h2>
+                    <h2>The page you're looking at is dynamically generated</h2>
                     <br/>
 
                     <h3>Routing configuration</h3>
