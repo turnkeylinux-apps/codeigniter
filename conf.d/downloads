@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
-URL="http://ellislab.com/codeigniter/download"
+VERSION="3.0.0.zip"
+URL="http://github.com/bcit-ci/CodeIgniter/archive/$VERSION"
 
 [ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
 curl -L -f $PROXY $URL -o /usr/local/src/codeigniter.zip
