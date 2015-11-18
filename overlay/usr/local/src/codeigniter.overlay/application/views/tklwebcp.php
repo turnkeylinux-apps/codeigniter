@@ -60,7 +60,7 @@
                           <a href="http://codeigniter.com/">Official CodeIngiter website</a>
                         </li>
                         <li><a
-                        href="http://www.turnkeylinux.org/codeigniter">
+                        href="https://www.turnkeylinux.org/codeigniter">
                         TurnKey CodeIgniter release notes</a></li>
                     </ul>
 
