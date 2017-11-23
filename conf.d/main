@@ -40,7 +40,7 @@ a2ensite codeigniter
 a2enmod rewrite
 
 # setup the database
-/etc/init.d/mysql start
+service mysql start
 
 MYSQL_BATCH="mysql --user=root --password=$MYSQL_PASS --batch"
 MYSQL_ADMIN="mysqladmin --user=root --password=$MYSQL_PASS"
@@ -53,7 +53,7 @@ sed -i "s|default'\]\['username.*|default']['username'] = '$DB_USER';|" $CONF
 sed -i "s|default'\]\['password.*|default']['password'] = '$DB_PASS';|" $CONF
 sed -i "s|default'\]\['database.*|default']['database'] = '$DB_NAME';|" $CONF
 
-/etc/init.d/mysql stop
+service mysql stop
 
 # misc tweak and secure configuration files from prying eyes
 CONF=$CI/application/config/config.php
