@@ -13,6 +13,10 @@ and on top of that:
    
    - Installed from upstream source code to /var/www/codeigniter
 
+     **Security note**: Updates to CodeIgniter may require supervision so
+     they **ARE NOT** configured to install automatically. See `CodeIgniter
+     documentation`_ for upgrading.
+
 - SSL support out of the box.
 - `Adminer`_ administration frontend for MySQL (listening on port
   12322 - uses SSL).
@@ -26,6 +30,7 @@ Credentials *(passwords set at first boot)*
 -  Webmin, SSH, MySQL: username **root**
 -  Adminer: username **adminer**
 
-.. _CodeIgniter: http://codeigniter.com/
+.. _CodeIgniter: https://codeigniter.com/
 .. _TurnKey Core: https://www.turnkeylinux.org/core
-.. _Adminer: http://www.adminer.org/
+.. _CodeIgniter documentation: https://www.codeigniter.com/userguide3/installation/upgrading.html
+.. _Adminer: https://www.adminer.org/
