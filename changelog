@@ -1,3 +1,10 @@
+turnkey-codeigniter-15.1 (1) turnkey; urgency=low
+
+  * Rebuild to resolve inadvertent removal of mariadb during sec-updates
+    - part of #1246.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 22 Nov 2018 11:42:15 +1100
+
 turnkey-codeigniter-15.0 (1) turnkey; urgency=low
 
   * Latest upstream source version of CodeIgniter (3.1.9)
