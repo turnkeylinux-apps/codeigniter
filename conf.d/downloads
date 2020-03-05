@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
-VERSION="3.1.9.zip"
-URL="http://github.com/bcit-ci/CodeIgniter/archive/$VERSION"
+VERSION="4.0.2.zip"
+URL="https://github.com/codeigniter4/CodeIgniter4/archive/$VERSION"
 
 [ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
 curl -L -f $PROXY $URL -o /usr/local/src/codeigniter.zip
