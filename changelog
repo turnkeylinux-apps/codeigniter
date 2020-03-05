@@ -1,3 +1,12 @@
+turnkey-codeigniter-16.0 (1) turnkey; urgency=low
+
+  * Latest upstream source version of CodeIgniter (4.0.2)
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Stefan Davis <stefan@turnkeylinux.org>  Thu, 05 Mar 2020 13:30:31 +1100
+
 turnkey-codeigniter-15.1 (1) turnkey; urgency=low
 
   * Rebuild to resolve inadvertent removal of mariadb during sec-updates
