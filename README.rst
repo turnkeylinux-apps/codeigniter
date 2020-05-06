@@ -32,5 +32,5 @@ Credentials *(passwords set at first boot)*
 
 .. _CodeIgniter: https://codeigniter.com/
 .. _TurnKey Core: https://www.turnkeylinux.org/core
-.. _CodeIgniter documentation: https://www.codeigniter.com/userguide3/installation/upgrading.html
+.. _CodeIgniter documentation: https://codeigniter4.github.io/userguide/installation/upgrading.html
 .. _Adminer: https://www.adminer.org/
