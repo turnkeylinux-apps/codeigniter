@@ -21,7 +21,7 @@ mv $WEBROOT/writable $CI
 mv $WEBROOT/env $CI/.env
 
 CONF=$WEBROOT/public/index.php
-sed -i "s|\$pathsPath = FCPATH \. '../app/Config/Paths.php';|\$pathsPath = '$CI/app/Config/Paths.php';|" $CONF
+sed -i "/^\$pathsPath = / s|=.*|= realpath('$CI/app/Config/Paths.php');|" $CONF
 
 CONF=$CI/app/Config/Paths.php
 sed -i "s|\$systemDirectory = __DIR__ \. '/../../system';|\$systemDirectory = '$CI/system';|" $CONF
