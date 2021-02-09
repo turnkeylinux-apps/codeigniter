@@ -20,9 +20,6 @@ mv $WEBROOT/system $CI
 mv $WEBROOT/writable $CI
 mv $WEBROOT/env $CI/.env
 
-CONF=$WEBROOT/public/index.php
-sed -i "/^\$pathsPath = / s|=.*|= realpath('$CI/app/Config/Paths.php');|" $CONF
-
 CONF=$CI/app/Config/Paths.php
 sed -i "s|\$systemDirectory = __DIR__ \. '/../../system';|\$systemDirectory = '$CI/system';|" $CONF
 sed -i "s|\$appDirectory = __DIR__ \. '/..';|\$appDirectory = '$CI/app';|" $CONF
@@ -61,6 +58,9 @@ service mysql stop
 # misc tweak and secure configuration files from prying eyes
 CONF=$CI/app/Config/Encryption.php
 sed -i "s|public \$key = .*|public \$key = '$(mcookie)';|" $CONF
+
+CONF=$WEBROOT/public/index.php
+sed -i "/^require realpath(FCPATH/ s|^.*$|require realpath(FCPATH . '../../../local/codeigniter/app/Config/Paths.php') ?: FCPATH . '../app/Config/Paths.php';|" /var/www/codeigniter/public/index.php
 
 chown -R www-data:www-data $CI/app/Config
 chmod 640 $CI/app/Config/*.php
