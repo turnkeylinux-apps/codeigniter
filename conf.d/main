@@ -60,7 +60,9 @@ CONF=$CI/app/Config/Encryption.php
 sed -i "s|public \$key = .*|public \$key = '$(mcookie)';|" $CONF
 
 CONF=$WEBROOT/public/index.php
-sed -i "/^require realpath(FCPATH/ s|^.*$|require realpath(FCPATH . '../../../local/codeigniter/app/Config/Paths.php') ?: FCPATH . '../app/Config/Paths.php';|" /var/www/codeigniter/public/index.php
+#sed -i "/^require realpath(FCPATH/ s|^.*$|require realpath(FCPATH . '../../../local/codeigniter/app/Config/Paths.php') ?: FCPATH . '../app/Config/Paths.php';|" /var/www/codeigniter/public/index.php
+sed -i '/^\$pathsConfig =/ s|=.*$|= '"'"'/var/local/codeigniter/app/Config/Paths.php'"'"';|' $CONF
+
 
 chown -R www-data:www-data $CI/app/Config
 chmod 640 $CI/app/Config/*.php
