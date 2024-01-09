@@ -1,3 +1,9 @@
+turnkey-codeigniter-18.0 (1) turnkey; urgency=low
+
+  * Latest upstream source version of CodeIgniter - 4.4.4.
+
+ -- Stefan Davis <stefan@turnkeylinux.org>  Tue, 09 Jan 2024 21:29:37 +0000
+
 turnkey-codeigniter-17.1 (1) turnkey; urgency=low
 
   * Updated all Debian packages to latest.

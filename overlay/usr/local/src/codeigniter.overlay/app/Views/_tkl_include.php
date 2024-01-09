@@ -13,9 +13,8 @@
 <p>On top of all this, we've also included</p>
 
 <ul>
-    <li><a href="https://<?= $_SERVER{'HTTP_HOST'}; ?>:12320">Web Shell</a></li>
-    <li><a href="https://<?= $_SERVER{'HTTP_HOST'}; ?>:12321">Webmin</a></li>
-    <li><a href="https://<?= $_SERVER{'HTTP_HOST'}; ?>:12322">Adminer</a></li>
+    <li><a href="https://<?= $_SERVER['HTTP_HOST']; ?>:12321">Webmin</a></li>
+    <li><a href="https://<?= $_SERVER['HTTP_HOST']; ?>:12322">Adminer</a></li>
 </ul>
 
 <p>Lastly checkout the <a href="https://www.turnkeylinux.org/codeigniter">TurnKey CodeIgniter release notes</a></p>
