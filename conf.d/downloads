@@ -1,7 +1,8 @@
 #!/bin/bash -ex
 
-VERSION="4.4.4"
-URL="https://github.com/codeigniter4/CodeIgniter4/archive/v${VERSION}.zip"
+REPO="codeigniter4/CodeIgniter4"
+VERSION="$(gh_releases $REPO)"
+URL="https://github.com/$REPO/archive/v${VERSION}.zip"
 
 [ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
 curl -L -f $PROXY $URL -o /usr/local/src/codeigniter.zip
