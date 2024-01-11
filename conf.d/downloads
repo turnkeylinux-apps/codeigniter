@@ -2,7 +2,7 @@
 
 REPO="codeigniter4/CodeIgniter4"
 VERSION="$(gh_releases $REPO | tail -1)"
-URL="https://github.com/$REPO/archive/v${VERSION}.zip"
+URL="https://github.com/$REPO/archive/${VERSION}.zip"
 
 [ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
 curl -L -f $PROXY $URL -o /usr/local/src/codeigniter.zip
