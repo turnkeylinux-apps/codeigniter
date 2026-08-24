@@ -6,7 +6,7 @@
 
 <pre><code>/var/www/codeigniter/public/assets</code></pre>
 
-<p>And MySQL comes preconfigured to get you started
+<p>And MySQL comes preconfigured to get you started.</p>
 
 <pre><code>/var/local/codeigniter/app/Config/Database.php</code></pre>
 

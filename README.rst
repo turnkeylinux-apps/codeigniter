@@ -11,7 +11,10 @@ and on top of that:
 
 - CodeIgniter configurations:
    
-   - Installed from upstream source code to /var/www/codeigniter
+   - CodeIgniter 4.7.4 is installed from its pinned official upstream release.
+   - Application code and writable data are stored in
+     ``/var/local/codeigniter``. The web root is
+     ``/var/www/codeigniter/public``.
 
      **Security note**: Updates to CodeIgniter may require supervision so
      they **ARE NOT** configured to install automatically. See `CodeIgniter
