@@ -31,9 +31,9 @@ grep -Fxq 'require "/var/local/codeigniter/app/Config/Paths.php";' \
     /var/www/codeigniter/public/index.php
 grep -Fxq 'require "/var/local/codeigniter/app/Config/Paths.php";' \
     /var/www/codeigniter/spark
-grep -Eq "public string \\$key = '[[:xdigit:]]{32}';" \
+grep -Eq 'public string \$key = '\''[[:xdigit:]]{32}'\'';' \
     /var/local/codeigniter/app/Config/Encryption.php
-db_password=$(sed -n "/public array \\$default = \\[/,/    \\];/ s|.*'password'     => '\([^']*\)'.*|\1|p" \
+db_password=$(sed -n '/public array \$default = \[/,/    \];/ s|.*'\''password'\''     => '\''\([^'\'']*\)'\''.*|\1|p' \
     /var/local/codeigniter/app/Config/Database.php)
 [[ $db_password =~ ^[[:xdigit:]]{32}$ ]]
 
