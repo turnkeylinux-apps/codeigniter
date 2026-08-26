@@ -7,9 +7,16 @@ page=/tmp/tkl-codeigniter-page.$$
 spark_output=/tmp/tkl-codeigniter-spark.$$
 policy=/tmp/tkl-codeigniter-policy.$$
 
+report_error() {
+    printf 'test_failure line=%s status=%s command=%q\n' \
+        "$1" "$2" "$3" >&2
+    exit "$2"
+}
+
 cleanup() {
     rm -f -- "$page" "$spark_output" "$policy"
 }
+trap 'report_error "$LINENO" "$?" "$BASH_COMMAND"' ERR
 trap cleanup EXIT
 
 systemctl --quiet is-active apache2.service mariadb.service postfix.service \
