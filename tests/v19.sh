@@ -60,7 +60,7 @@ grep -Fq ':12322' "$page"
 MYSQL_PWD=$db_password mariadb --user=codeigniter codeigniter --batch \
     --execute "CREATE TABLE tkl_v19_acceptance (id INT PRIMARY KEY, message VARCHAR(64)); INSERT INTO tkl_v19_acceptance VALUES (1, 'turnkey-v19-database-round-trip');"
 runuser --user www-data -- php /var/www/codeigniter/spark \
-    db:table tkl_v19_acceptance >"$spark_output"
+    db:table tkl_v19_acceptance --limit-field-value 64 >"$spark_output"
 grep -Fq 'codeigniter' "$spark_output"
 grep -Fq 'tkl_v19_acceptance' "$spark_output"
 grep -Fq 'turnkey-v19-database-round-trip' "$spark_output"
