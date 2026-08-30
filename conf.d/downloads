@@ -1,8 +1,15 @@
-#!/bin/bash -ex
+#!/bin/bash
+set -Eeuo pipefail
 
-REPO="codeigniter4/CodeIgniter4"
-VERSION="$(gh_releases $REPO | tail -1)"
-URL="https://github.com/$REPO/archive/${VERSION}.zip"
+VERSION=4.7.4
+URL="https://github.com/codeigniter4/CodeIgniter4/archive/refs/tags/v${VERSION}.zip"
+SHA256=a28cf27e2fc0c7220b6212fa16aa396bf8bd1ad7150d996db1acfd39dee47e77
+ARCHIVE="/usr/local/src/codeigniter-v${VERSION}.zip"
+curl_args=(--location --fail --show-error)
 
-[ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
-curl -L -f $PROXY $URL -o /usr/local/src/codeigniter.zip
+if [[ -n ${FAB_HTTP_PROXY:-} ]]; then
+    curl_args+=(--proxy "$FAB_HTTP_PROXY")
+fi
+
+curl "${curl_args[@]}" "$URL" --output "$ARCHIVE"
+printf '%s  %s\n' "$SHA256" "$ARCHIVE" | sha256sum --check --strict
